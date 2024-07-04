@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./images/copaIcon.jpg">
+    <title>Simulador Copa America</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="./images/bannerAmerica.jpg" alt="Banner de la Copa America">
+    </div>
+    <div class="botones">
+        <form class=".form-container">
+            <button type="submit" class="submit-button" id="verGrupos">Ver grupos</button>
+        </form>
+        <form class=".form-container">
+            <button type="submit" class="submit-button" id="prediccion">Realizar predicción</button>
+        </form>
+    </div>
+    <div class="grupos" id="grupos">
+        <!-- Plantilla para clonar -->
+        <div class="grupoSeparado" id="grupoTemplate" style="display: none;">
+            <h2 id="nombreGrupo"></h2>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>PJ</td>
+                    <td>PG</td>
+                    <td>PE</td>
+                    <td>PP</td>
+                    <td>GF</td>
+                    <td>GC</td>
+                    <td>Dif.</td>
+                    <td>Pts.</td>
+                </tr>
+                <tr class="abajo">
+                    <td class="img"></td>
+                    <td class="equipo"></td>
+                    <td class="partidosJugados"></td>
+                    <td class="partidosGanados"></td>
+                    <td class="partidosEmpatados"></td>
+                    <td class="partidosPerdidos"></td>
+                    <td class="golesFavor"></td>
+                    <td class="golesContra"></td>
+                    <td class="diferenciaGoles"></td>
+                    <td class="puntos"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="section-predicciones" id="section-predicciones">
+        <h2>Seleccione los 2 equipos que pasaran en cada grupo</h2>
+        <p>(Clickea al que va a ser primero de grupo y luego al segundo)</p>
+        <div class="predicciones">
+            <div class="grupoPrediccion" id="prediccionClonado">
+                <h2 class="nombreGrupo" id="grupoCopa"></h2>
+                    <button class="btn-grupo">
+                        <h3 class="position"></h3>
+                        <img class="imagen-equipo">
+                        <h3 class="nombreEquipo"></h3>
+                        <input type="checkbox" class="seleccionar">
+                    </button>
+            </div>
+        </div>
+        <button class="siguiente" id="siguiente">
+            SIGUIENTE FASE
+        </button>
+    </div>
+    <div class="faseEliminatoria" id="eliminatorias">
+        <div class="faseActual">
+            <h3 id="cuartos">CUARTOS</h3>
+            <h3 id="semis">SEMIS</h3>
+            <h3 id="final">FINAL</h3>
+        </div>
+        <div class="contenedor-enfrentamientos">
+            <div class="enfrentamiento">
+                    <button class="btn-grupo">
+                        <h3 class="position"></h3>
+                        <img class="imagen-equipo">
+                        <h3 class="nombreEquipo"></h3>
+                        <input type="checkbox" class="seleccionar">
+                    </button>
+                    <h3 class="versus">VS</h3>
+                    <button class="btn-grupo">
+                        <h3 class="position"></h3>
+                        <img class="imagen-equipo">
+                        <h3 class="nombreEquipo"></h3>
+                        <input type="checkbox" class="seleccionar">
+                    </button>
+            </div>
+        </div>
+        <button class="siguiente" id="siguienteFaseBtn">
+            SIGUIENTE FASE
+        </button>
+    </div>
+    <div id="contenedor-ganador"></div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
